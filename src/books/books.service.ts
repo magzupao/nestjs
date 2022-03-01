@@ -26,4 +26,7 @@ export class BooksService {
 
     return msg;
   }    
+  createBook(newBook: any) {
+    return newBook;
+  }  
 }

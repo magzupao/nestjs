@@ -1,4 +1,4 @@
-import { Controller, Req, Param, Query, Get } from '@nestjs/common';
+import { Controller, Req, Body, Param, Query, Get, Post } from '@nestjs/common';
 import { BooksService } from './books.service'; 
 import { Request } from 'express';
 
@@ -25,4 +25,9 @@ export class BooksController {
     return this.booksService.findQueryAll(request.query); 
   }
 
+  @Post() 
+  createBook(@Body() body) { 
+    let newBook: any = body; 
+    return this.booksService.createBook(newBook); 
+  }
 }
