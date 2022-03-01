@@ -33,6 +33,12 @@ let BooksService = class BooksService {
     createBook(newBook) {
         return newBook;
     }
+    deleteBook(bookId) {
+        return `deleteBook funcionando con bookId: ${bookId}`;
+    }
+    updateBook(bookId, newBook) {
+        return newBook;
+    }
 };
 BooksService = __decorate([
     (0, common_1.Injectable)()

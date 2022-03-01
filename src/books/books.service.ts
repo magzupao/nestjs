@@ -1,4 +1,5 @@
 import { Injectable } from '@nestjs/common';
+import { BookDto } from './book.dto';
 
 @Injectable()
 export class BooksService {
@@ -26,13 +27,13 @@ export class BooksService {
 
     return msg;
   }    
-  createBook(newBook: any) {
+  createBook(newBook: BookDto) {
     return newBook;
   }
   deleteBook(bookId: string) {
     return `deleteBook funcionando con bookId: ${bookId}`;
   }
-  updateBook(bookId: string, newBook: any) {
+  updateBook(bookId: string, newBook: BookDto) {
     return newBook;
   }  
 }

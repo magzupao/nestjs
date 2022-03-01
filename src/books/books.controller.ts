@@ -1,6 +1,7 @@
 import { Controller, Req, Body, Param, Query, Get, Post, Delete, Put } from '@nestjs/common';
 import { BooksService } from './books.service'; 
 import { Request } from 'express';
+import { BookDto } from './book.dto';
 
 @Controller('books')
 export class BooksController {
@@ -26,8 +27,7 @@ export class BooksController {
   }
 
   @Post() 
-  createBook(@Body() body) { 
-    let newBook: any = body; 
+  createBook(@Body() newBook: BookDto) { 
     return this.booksService.createBook(newBook); 
   }
 
@@ -37,8 +37,7 @@ export class BooksController {
   }
 
   @Put(':bookId') 
-  updateBook(@Param('bookId') bookId: string, @Body() body) { 
-    let newBook: any = body;
+  updateBook(@Param('bookId') bookId: string, @Body() newBook: BookDto) { 
     return this.booksService.updateBook(bookId, newBook); 
   }
 }
