@@ -31,5 +31,8 @@ export class BooksService {
   }
   deleteBook(bookId: string) {
     return `deleteBook funcionando con bookId: ${bookId}`;
+  }
+  updateBook(bookId: string, newBook: any) {
+    return newBook;
   }  
 }
